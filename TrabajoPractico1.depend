@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1536102246 source:d:\rodrigo\trabajopractico1\calculadora.c
+
+1536102857 source:d:\rodrigo\trabajopractico1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Calculadora.h"
+
+1536102246 d:\rodrigo\trabajopractico1\calculadora.h
+
