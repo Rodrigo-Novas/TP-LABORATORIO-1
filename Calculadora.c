@@ -76,6 +76,13 @@ int factorialNumero(float n)  //FUNCION RECURSIVA
   return resultado;
 }
 
+
+/**
+ * \BRIEF realiza el calculo factorial de un numero
+ * \PARAM num (n)
+ * \RETURN resultado factorial
+ */
+
 int factorialNumero2(float n)  //FUNCION RECURSIVA
 
 {

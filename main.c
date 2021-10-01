@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "Calculadora.h"
 
 
@@ -185,37 +186,48 @@ int main()
         break;
    case 9:	/*TODAS LAS OPERACIONES */
     if (numero1 == 'n' && numero1 == 'n') {
-     system("cls");
+         system("cls");
 
-     printf("suma(%.2f + %.2f): ",a,b);
-     resultado = sumaParametros(a,b);
-     printf("%.2f\n\n", resultado);
+         printf("suma(%.2f + %.2f): ",a,b);
+         resultado = sumaParametros(a,b);
+         printf("%.2f\n\n", resultado);
 
-     printf("resta(%.2f - %.2f): ", a, b);
-     resultado = restaParametros(a,b);
-     printf("%.2f\n\n", resultado);
+         printf("resta(%.2f - %.2f): ", a, b);
+         resultado = restaParametros(a,b);
+         printf("%.2f\n\n", resultado);
 
-     printf("division(%.2f / %.2f): ", a, b);
-     if(b!=0){
-     resultado = dividirParametros(a,b);
-     printf("%.2f\n\n", resultado);
-	 }
-	 else{
-	 resultado = printf("NO SE PUEDE MOSTRAR ESTE RESULTADO PORQUE EL DIVIDENDO NO PUEDE SER CERO \n\n");
-	 }
+         printf("division(%.2f / %.2f): ", a, b);
+         if(b!=0){
+         resultado = dividirParametros(a,b);
+         printf("%.2f\n\n", resultado);
+         }
+         else{
+         resultado = printf("NO SE PUEDE MOSTRAR ESTE RESULTADO PORQUE EL DIVIDENDO NO PUEDE SER CERO \n\n");
+         }
 
-     printf("multiplicacion(%.2f x %.2f): ", a, b);
-     resultado = multiplicarParametros(a,b);
-     printf("%.2f\n\n", resultado);
+         printf("multiplicacion(%.2f x %.2f): ", a, b);
+         resultado = multiplicarParametros(a,b);
+         printf("%.2f\n\n", resultado);
 
-     printf("factorial(%.0f): ",a);
-     resultado = factorialNumero(a);
-     printf("%.0f\n\n", resultado);
+         printf("factorial(%.0f): ",a);
+         if (a>0){
+             resultado = factorialNumero(a);
+             printf("%.0f\n\n", resultado);
+         }
+         else{
+            printf("No se puede mostrar el resultado porque A es un numero menor a cero y no se pueden calcular factorial de un numero negativo A: %.0f\n\n", a);
+         }
+        printf("factorial(%.0f): ",b);
+        if (b>0){
+         resultado = factorialNumero2(b);
+         printf("%.0f\n\n", resultado);
+        }
+         else{
+            printf("No se puede mostrar el resultado porque A es un numero menor a cero y no se pueden calcular factorial de un numero negativo B: %.0f\n\n", b);
+        }
 
-     printf("factorial(%.0f): ",b);
-     resultado = factorialNumero2(b);
-     printf("%.0f\n\n", resultado);
     }
+
     else {
      system("cls");
      printf("primero ingrese numeros\n\n");
@@ -224,15 +236,16 @@ int main()
 
 
    case 10:	/*  SALIR */
-
-  printf("\n\n----> Pulse enter para salir\n\n");
+    system("cls");
+    printf("\n\n----> Pulse enter para salir\n\n");
 
     break;
    default:
+    system("cls");
+    printf("\n\nEsa opcion no esta disponible, vuelva a ingresar una opcion pulsa enter para seguir\n\n");
 
-    printf("vuelva a ingresar una opcion\n\n");
   }
-  }while(calculadora!=9);
+  }while(calculadora!=10);
 
 return 0; // *RETORNA CERO, FIN DEL CODIGO*
 
